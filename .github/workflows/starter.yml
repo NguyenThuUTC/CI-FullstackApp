@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x]
+        node-version: [16, 18]
 
     steps:
       # Check out the code from the repository.
@@ -33,9 +33,6 @@ jobs:
 
       # Run the tests.
       - run: cd backend && npm test
-
-      # Install the dependencies.
-      - run: cd backend && npm i -g lint
       
       # Run the linter.
       - run: cd backend && npm run lint  
